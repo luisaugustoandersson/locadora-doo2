@@ -16,12 +16,10 @@
         <div class="divcadastro">
             <form id="formcli" action="controleprinc" method="POST">
                 <div class="divcadastrotitulo">
-                    <p>Cadastro de Clientes</p>    
+                    <p>Cadastro de Clientes</p>
                 </div>
                 <table>
                     <tr>
-                        </br>
-                        </br>
                         </br>
                         </br>
                         </br>
@@ -32,19 +30,16 @@
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPF:</td><td><input type="text" name="txtcpf" size="11" maxlength="11"></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Endereço:&nbsp;&nbsp;&nbsp;</td><td><input type=text name="txtendereco" size=30></td><td>&nbsp;Complemento:<input type="text" name="txtcomplemento" size="20"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Endereço:&nbsp;&nbsp;&nbsp;</td><td><input type=text name="txtendereco" size=30></td><td>&nbsp;Compl:<input type="text" name="txtcomplemento" size="20"></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bairro:</td><td><input type="text" name="txtbairro" size="10">&nbsp;&nbsp;Cidade:<input type="text" name="txtcidade" size="15"></td><td>&nbsp;UF:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="txtuf" size="10"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bairro:</td><td><input type="text" name="txtbairro" size="11"></td><td>&nbsp;Cidade:<input type="text" name="txtcidade" size="15"></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:</td><td><input type="text" name="txtemail" size="30"></td><td>Registro CNH:<input type="text" name="txtcnh" size="11" maxlength="11"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UF:</td><td><input type="text" name="txtuf" size="11"></td>
                     </tr>
                     <tr>
-                        <td> </td><td> </td><td> </td>
-                    </tr>
-                    <tr>
-                        <td> </td><td> </td><td> </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reg.CNH:</td><td><input type="text" name="txtcnh" size="11" maxlength="11"></td>
                     </tr>
                     <tr>
                         <td> </td><td> </td><td> </td>
@@ -59,7 +54,28 @@
                         <td> </td><td> </td><td> </td>
                     </tr>
                     <tr>
-                        <td> </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cadastrar">&nbsp;&nbsp;&nbsp;<input type="reset" value="Limpar" onclick="reset()">&nbsp;&nbsp;&nbsp;<input type="button" value="Voltar" onclick="history.go(-1)"></td><td> </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuario:</td><td><input type="text" name="txtuser" size="20" maxlength="15"</td><td> </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Senha:</td><td><input type="password" name="txtsenha" size="20" maxlength="15"</td><td> </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail:</td><td><input type="text" name="txtemail" size="30"></td><td> </td><td> </td>
+                    </tr>
+                    <tr>
+                        <td> </td><td> </td><td> </td>
+                    </tr>
+                    <tr>
+                        <td> </td><td> </td><td> </td>
+                    </tr>
+                    <tr>
+                        <td> </td><td> </td><td> </td>
+                    </tr>
+                    <tr>
+                        <td> </td><td> </td><td> </td>
+                    </tr>
+                    <tr>
+                        <td> </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cadastrar" formaction="controleprinc?acao=novocliente?acaoCRUD=salvar">&nbsp;&nbsp;&nbsp;<input type="reset" value="Limpar" onclick="reset()">&nbsp;&nbsp;&nbsp;<input type="button" value="Voltar" onclick="history.go(-1)"></td><td> </td>
                     </tr>
                 </table>
                 </br>

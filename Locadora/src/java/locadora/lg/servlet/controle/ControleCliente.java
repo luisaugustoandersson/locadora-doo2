@@ -4,6 +4,8 @@
  */
 package locadora.lg.servlet.controle;
 
+import bean.Cliente;
+import dao.ClienteDAO;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -46,12 +48,31 @@ public class ControleCliente {
 
     private void salvar() throws ServletException, IOException {
         //aqui inserir todos os campos do cadastro de cliente
-        String descricao = req.getParameter("txtDescricao");
-        String localizacao = req.getParameter("txtLocalizacao");
+        String nome = req.getParameter("txtnome");
+        String cpf = req.getParameter("txtcpf");
+        String endereco = req.getParameter("txtendereco");
+        String complemento = req.getParameter("txtcomplemento");
+        String bairro = req.getParameter("txtbairro");
+        String cidade = req.getParameter("txtcidade");
+        String uf = req.getParameter("txtuf");
+        String cnh = req.getParameter("txtcnh");
+        String user = req.getParameter("txtuser");
+        String senha = req.getParameter("txtsenha");
+        String email = req.getParameter("txtemail");
         
         Cliente cli = new Cliente();
-        cli.setDescricao(descricao);
-        cli.setLocalizacao(localizacao);
+        cli.setNome(nome);
+        cli.setCpf(Integer.parseInt(cpf));  
+        cli.setEndereco(endereco);
+        cli.setComplemento(complemento);
+        cli.setBairro(bairro);
+        cli.setCidade(cidade);
+        cli.setUf(uf);
+        cli.setCnh(Integer.parseInt(cnh));     
+        cli.setUsername(user);
+        cli.setSenha(senha);
+        cli.setEmail(email);
+        
         int codigo = 0;
         try {
             codigo = Integer.parseInt(req.getParameter("txtCodigo"));
@@ -67,7 +88,7 @@ public class ControleCliente {
                 cliDAO.update(cli);
             }
         } catch (Exception ex) {
-            ControlePrincipal.dispatcherErro(req, resp, String.format("Não foi possível inserir departamento.[%s]", ex.getMessage()));
+            ControlePrincipal.dispatcherErro(req, resp, String.format("Não foi possível Cadastrar o Cliente.[%s]", ex.getMessage()));
             return;
         }
     }

@@ -14,7 +14,18 @@
         <script type="text/javascript" src="js/javascript.js" charset="UTF-8"></script>
     </head>
     <body>
+        <div class="menu">
+            <table border="0">
+                <tr>
+                    <td>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="noticias.jsp"><img src="imagens/noticias.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>|&nbsp;&nbsp;&nbsp;&nbsp;<a href="veiculos.jsp"><img src="imagens/veiculos.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="formcliente.jsp"><img src="imagens/cadastro.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                    <td>|&nbsp;&nbsp;&nbsp;&nbsp;<a href="promocoes.jsp"><img src="imagens/promocoes.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+                </tr>
+            </table>
+        </div>
         <div class="principal">
+            
             <div class="logo" id="logo" >
                 
             </div>
@@ -26,11 +37,12 @@
                 </p>
             </div>
             <div class="conteudo">
+                
                 <p></p>
             </div>
             <div class="busca">
-                <p>&nbsp;&nbsp;<input type="text" name="txtbusca" size="25" maxlength="40" style="width:80; height:18">
-                    <img src="imagens/busca.ico"><a href="www.google.com.br">Buscar</a></br>
+                <p>&nbsp;&nbsp;<input type="text" name="txtbusca" size="30" maxlength="40" style="width:80; height:18">
+                    <a href="busca"><img src="imagens/busca.ico"></a></br>
                 </p>
             </div>    
         </div>

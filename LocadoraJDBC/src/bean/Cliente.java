@@ -146,6 +146,17 @@ public class Cliente {
         this.uf = uf;
     }
 
+    public boolean validasenha(String senha) {
+        boolean verf = false;
+        try {
+            if (this.senha.equals(senha)) {
+                verf = true;
+            }
+        } catch (NullPointerException ex) {
+        }
+        return verf;
+    }
+
     @Override
     public String toString() {
         return this.nome;

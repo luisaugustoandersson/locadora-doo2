@@ -54,10 +54,9 @@ public class ClienteDAO {
 
     public Cliente retrive(Cliente cliente) throws SQLException {
         Cliente clienteret = null;
-        String sql = "SELECT * FROM cliente WHERE username=? and senha=?";
+        String sql = "SELECT * FROM cliente WHERE username=?";
         PreparedStatement pst = this.conexao.prepareStatement(sql);
         pst.setString(1, cliente.getUsername());
-        pst.setString(2, cliente.getSenha());
         ResultSet rst = pst.executeQuery();
         if (rst.next()) {
             clienteret = new Cliente();

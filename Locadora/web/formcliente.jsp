@@ -75,7 +75,7 @@
                         <td> </td><td> </td><td> </td>
                     </tr>
                     <tr>
-                        <td> </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cadastrar" formaction="controleprinc?acao=novocliente?acaoCRUD=salvar">&nbsp;&nbsp;&nbsp;<input type="reset" value="Limpar" onclick="reset()">&nbsp;&nbsp;&nbsp;<input type="button" value="Voltar" onclick="history.go(-1)"></td><td> </td>
+                        <td> </td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cadastrar" formaction="controleprinc?acao=novocliente&acaoCRUD=salvar">&nbsp;&nbsp;&nbsp;<input type="reset" value="Limpar" onclick="reset()">&nbsp;&nbsp;&nbsp;<input type="button" value="Voltar" onclick="history.go(-1)"></td><td> </td>
                     </tr>
                 </table>
                 </br>

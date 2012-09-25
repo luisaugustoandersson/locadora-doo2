@@ -30,9 +30,9 @@ public class ControleCliente {
         this.conn = conn;
     }
 
-    public void processo() throws ServletException, IOException, SQLException {
+    public void processo(String acaoCRUD) throws ServletException, IOException, SQLException {
         
-        String acaoCRUD = req.getParameter("acaoCRUD");
+//        String acaoCRUD = req.getParameter("acaoCRUD");
 
         if ("salvar".equals(acaoCRUD)) {
             this.salvar();

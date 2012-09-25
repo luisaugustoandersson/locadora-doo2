@@ -46,12 +46,13 @@ public class ControlePrincipal extends HttpServlet {
             dataSource = (DataSource) context.lookup("jdbc/locadorabd");
             conn = dataSource.getConnection();
             String acao = req.getParameter("acao");
+            String acaoCRUD = req.getParameter("acaoCRUD");
             if ("login".equals(acao)) {
                 ControleLogin lc=new ControleLogin(req, res, conn);
                 lc.processo();
             } else if("novocliente".equals(acao)){
                 ControleCliente cc=new ControleCliente(req, res, conn);
-                cc.processo();
+                cc.processo(acaoCRUD);
             } else if("logout".equals(acao)){
                 req.getSession().invalidate();
                 RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");

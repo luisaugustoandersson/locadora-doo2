@@ -25,8 +25,8 @@ public class ClienteDAO {
 
     public void create(Cliente cliente) throws SQLException {
         if (this.valida(cliente)) {
-            String sql = "INSET INTO cliente (cod_cliente, nome, email, telefone, username, senha, cpf, cnh, endereco, bairro, complemento, uf, cidade, idade) "
-                    + "VALUES (NEXTVAL('seq_cliente'), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO cliente (cod_cliente, nome, email, telefone, username, senha, cpf, cnh, endereco, bairro, complemento, uf, cidade) "
+                    + "VALUES (NEXTVAL('seq_cliente'), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pst = this.conexao.prepareStatement(sql);
             pst.setString(1, cliente.getNome());
             pst.setString(2, cliente.getEmail());
@@ -40,7 +40,6 @@ public class ClienteDAO {
             pst.setString(10, cliente.getComplemento());
             pst.setString(11, cliente.getUf());
             pst.setString(12, cliente.getCidade());
-            pst.setInt(13, cliente.getIdade());
             pst.executeUpdate();
             Statement st = this.conexao.createStatement();
             ResultSet rst = st.executeQuery("SELECT CURRVAL('seq_cliente')");
@@ -83,7 +82,7 @@ public class ClienteDAO {
 
     public void update(Cliente cliente) throws SQLException {
         if (this.valida(cliente)) {
-            String sql = "UPDATE cliente SET nome=?, email=?, telefone=?, username=?, senha=?, cpf=?, cnh=?, endereco=?, bairro=?, complemento=?, uf=?, cidade=?, idade=? WHERE cod_cliente=?";
+            String sql = "UPDATE cliente SET nome=?, email=?, telefone=?, username=?, senha=?, cpf=?, cnh=?, endereco=?, bairro=?, complemento=?, uf=?, cidade=? WHERE cod_cliente=?";
             PreparedStatement pst = this.conexao.prepareStatement(sql);
             pst.setString(1, cliente.getNome());
             pst.setString(2, cliente.getEmail());
@@ -97,8 +96,7 @@ public class ClienteDAO {
             pst.setString(10, cliente.getComplemento());
             pst.setString(11, cliente.getUf());
             pst.setString(12, cliente.getCidade());
-            pst.setInt(13, cliente.getIdade());
-            pst.setInt(14, cliente.getCod());
+            pst.setInt(13, cliente.getCod());
             pst.executeUpdate();
             pst.close();
         }

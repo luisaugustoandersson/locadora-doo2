@@ -25,18 +25,18 @@
                         </br>
                         </br>
                         </br>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nome:&nbsp;&nbsp;&nbsp;</td><td><input type=text name="txtnome" size=40></td> 
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nome:&nbsp;&nbsp;&nbsp;</td><td><input type=text name="txtnome" size=40 maxlength="20"></td> 
                     <tr>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPF:</td><td><input type="text" name="txtcpf" size="11" maxlength="11"></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Endereço:&nbsp;&nbsp;&nbsp;</td><td><input type=text name="txtendereco" size=30></td><td>&nbsp;Compl:<input type="text" name="txtcomplemento" size="20"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Endereço:&nbsp;&nbsp;&nbsp;</td><td><input type=text name="txtendereco" size=30 maxlength="40"></td><td>&nbsp;Compl:<input type="text" name="txtcomplemento" size="20" maxlength="20"></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bairro:</td><td><input type="text" name="txtbairro" size="11"></td><td>&nbsp;Cidade:<input type="text" name="txtcidade" size="15"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bairro:</td><td><input type="text" name="txtbairro" size="11" maxlength="20"></td><td>&nbsp;Cidade:<input type="text" name="txtcidade" size="15" maxlength="20"></td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UF:</td><td><input type="text" name="txtuf" size="11"></td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UF:</td><td><input type="text" name="txtuf" size="11" maxlength="2"></td>
                     </tr>
                     <tr>
                         <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reg.CNH:</td><td><input type="text" name="txtcnh" size="11" maxlength="11"></td>
@@ -54,13 +54,13 @@
                         <td> </td><td> </td><td> </td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuario:</td><td><input type="text" name="txtuser" size="20" maxlength="15"</td><td> </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Usuario:</td><td><input type="text" name="txtuser" size="20" maxlength="10"</td><td> </td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Senha:</td><td><input type="password" name="txtsenha" size="20" maxlength="15"</td><td> </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Senha:</td><td><input type="password" name="txtsenha" size="20" maxlength="10"</td><td> </td>
                     </tr>
                     <tr>
-                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail:</td><td><input type="text" name="txtemail" size="30"></td><td> </td><td> </td>
+                        <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-mail:</td><td><input type="text" name="txtemail" size="30" maxlength="20"></td><td> </td><td> </td>
                     </tr>
                     <tr>
                         <td> </td><td> </td><td> </td>

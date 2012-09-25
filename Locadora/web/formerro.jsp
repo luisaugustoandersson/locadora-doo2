@@ -9,20 +9,20 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Protótipo Cadastros JSP</title>
+        <title>Locadora de Veículos - ERRO</title>
     </head>
     <link rel="stylesheet" href="css/layout.css" type="text/css"/>
     <body>
         <div id="container">
             <div id="header">
                 <img src="imagens/ucpel.png">
-                <div class="tituloPri">FUNDAMENTOS DE BANCO DE DADOS</div>
+                <div class="tituloPri">Locadora de Veículos</div>
             </div>
             <div id="leftBar">
             </div>
             <div id="contentLogin">
                 <div id="cxErro">
-                    <div id="titCxErro">Erro</div>
+                    <div id="titCxErro">Desculpe, Ocorreu um Erro! Verifique a descrição.</div>
                     <br>
                     <%
             String mensagem = (String) request.getAttribute("mensagem");
@@ -31,12 +31,9 @@
                 out.write("<br/>");
             }
                     %>
-                    <a class="labelsErro" href="index.jsp">Tente Novamente</a>
+                    <a class="labelsErro" href="index.jsp">Voltar</a>
                     
                 </div>
-            </div>
-            <div id="footer">
-                <div class="tituloSec">Protótipo para exemplificar conteúdos da disciplina! Prof. Luciano Edson Mertins</div>
             </div>
         </div>        
     </body>

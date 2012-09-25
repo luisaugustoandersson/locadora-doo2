@@ -31,9 +31,6 @@ public class ControleCliente {
     }
 
     public void processo(String acaoCRUD) throws ServletException, IOException, SQLException {
-        
-//        String acaoCRUD = req.getParameter("acaoCRUD");
-
         if ("salvar".equals(acaoCRUD)) {
             this.salvar();
         }

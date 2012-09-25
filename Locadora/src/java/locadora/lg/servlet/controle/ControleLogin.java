@@ -1,5 +1,7 @@
 package locadora.lg.servlet.controle;
 
+import bean.Cliente;
+import dao.ClienteDAO;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -25,17 +27,20 @@ public class ControleLogin {
     }
 
     public void processo() throws ServletException, IOException, SQLException {
-        String login = req.getParameter("txtUsuario");
+        String user = req.getParameter("txtUsuario");
         String senha = req.getParameter("txtSenha");
-        //UsuarioDAO usrDao = new UsuarioDAO(conn);
-        //Usuario usuario = usrDao.retrieve(login);
-        //if (usuario == null || !usuario.validaSenha(senha)) {
-            //ServletPrincipal.dispatcherErro(req, resp, String.format("Usuário ou Senha Inválidos.[%s]", login));
+        ClienteDAO usrDAO = new ClienteDAO(conn);
+        Cliente cliente = new Cliente();
+        cliente.setUsername(user);
+        cliente.setSenha(senha);
+        cliente = usrDAO.retrive(cliente);
+        if (cliente == null || !cliente.validasenha(senha)) {
+            ControlePrincipal.dispatcherErro(req, resp, "Usuario ou senha invalida");
             return;
-        //} else {
-          //  req.getSession().setAttribute("UsuarioLogado", Boolean.TRUE);
-           // RequestDispatcher dispatcher = req.getRequestDispatcher("formprincipal.jsp");
-            //dispatcher.forward(req, resp);
+        } else {
+            req.getSession().setAttribute("Logado", Boolean.TRUE);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+            dispatcher.forward(req, resp);
         }
     }
-//}
+}

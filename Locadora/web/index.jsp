@@ -32,7 +32,7 @@
             <div class="login">
                 <p>&nbsp;&nbsp;Usuário:<input type="text" name="txtlogin" size="15"></br>
                     &nbsp;&nbsp;Senha:&nbsp;&nbsp;<input type="password" name="txtsenha" size="15"></br>
-                    &nbsp;&nbsp;<input type="checkbox" name="checksenha">&nbsp;lembrar minha senha?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" name="botaoentra">Entrar</button></br>
+                    &nbsp;&nbsp;<input type="checkbox" name="checksenha">&nbsp;lembrar minha senha?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" name="botaoentra" value="entrar" formaction="controleprinc?acao=login&acaoCRUD=busca">Entrar</button></br>
                     &nbsp;&nbsp;&nbsp;não possui conta? clique <a href="controleprinc?acao=novocliente">aqui</a>
                 </p>
             </div>

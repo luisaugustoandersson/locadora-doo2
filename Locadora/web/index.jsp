@@ -30,11 +30,14 @@
 
             </div>
             <div class="login">
-                <p>&nbsp;&nbsp;Usuário:<input type="text" name="txtlogin" size="15"></br>
-                    &nbsp;&nbsp;Senha:&nbsp;&nbsp;<input type="password" name="txtsenha" size="15"></br>
-                    &nbsp;&nbsp;<input type="checkbox" name="checksenha">&nbsp;lembrar minha senha?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" name="botaoentra" value="entrar" formaction="controleprinc?acao=login&acaoCRUD=busca">Entrar</button></br>
-                    &nbsp;&nbsp;&nbsp;não possui conta? clique <a href="controleprinc?acao=novocliente">aqui</a>
-                </p>
+                <form id="formlogin" action="controleprinc" method="POST">
+                    <p>&nbsp;&nbsp;Usuário:<input type="text" name="txtlogin" size="15"></br>
+                        &nbsp;&nbsp;&nbsp;Senha:&nbsp;&nbsp;<input type="password" name="txtsenha" size="15"></br>
+                        &nbsp;&nbsp;<input type="checkbox" name="checksenha">&nbsp;lembrar minha senha?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="login"/></br>
+                        <input id="acao" name="acao" value="Entrar" type="hidden"/>
+                        &nbsp;&nbsp;&nbsp;não possui conta? clique <a href="controleprinc?acao=novocliente">aqui</a>
+                    </p>
+                </form>
             </div>
             <div class="conteudo">
 
@@ -43,9 +46,9 @@
                             <p><span class="subtitulo_motivos">&nbsp;&nbsp;&nbsp;&nbsp;Economia, conforto e praticidade na hora de viajar</span></p>
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;Não importa o motivo da sua viagem: férias, negócios, passeio. Um carro te proporciona muito mais &nbsp;&nbsp;&nbsp;&nbsp;liberdade para ir e vir, além de segurança e conforto.</p>
                             <p>&nbsp;&nbsp;&nbsp;&nbsp;Para viajar nas férias ou feriados, você pode alugar um carro que ofereça espaço e conforto, como &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ar-condicionado e porta-malas grande. Se a viagem for a negócios, o aluguel de um carro pode sair &nbsp;&nbsp;&nbsp;&nbsp;mais barato que os custos de um táxi.</p>
-                             
-                            
-                            
+
+
+
                         </div></span>
                     <!-- motivo1 -->
                     <span id="ctl00_ContentPlaceHolder1_cvtitulo_viagem_ferias_passeios" class="motivos" style="height:100%;width:100%;"><div style="overflow:none;">
@@ -53,7 +56,8 @@
                         </div></span>
                     <span id="ctl00_ContentPlaceHolder1_cvconteudo_viagem_ferias_passeios" style="height:100%;width:100%;"><div style="overflow:none;">
                             <UL>
-                                <LI>&nbsp;&nbsp;&nbsp;&nbsp;Viajar de carro fazendo seu próprio roteiro 
+                                <LI>
+                                    &nbsp;&nbsp;&nbsp;Viajar de carro fazendo seu próprio roteiro 
                                 <LI>&nbsp;&nbsp;&nbsp;&nbsp;Evitar desgaste do seu carro 
                                 <LI>&nbsp;&nbsp;&nbsp;&nbsp;Viajar pelo litoral brasileiro e outras cidades </LI></UL>
                         </div></span>

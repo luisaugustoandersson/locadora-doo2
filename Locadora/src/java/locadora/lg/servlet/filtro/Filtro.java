@@ -22,13 +22,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Guilherme Gehling
  */
-@WebFilter(filterName = "Filtro", urlPatterns = {"/*"})
+@WebFilter(filterName = "Filtro", urlPatterns = {"/.jsp"})
 public abstract class Filtro implements Filter {
 
     private static final boolean debug = true;
-    // The filter configuration object we are associated with.  If
-    // this value is null, this filter instance is not currently
-    // configured. 
     private FilterConfig filterConfig = null;
 
     public Filtro() {
@@ -37,61 +34,28 @@ public abstract class Filtro implements Filter {
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }
-    // Write code here to process the request and/or response after
-    // the rest of the filter chain is invoked.
-    // For example, a logging filter might log the attributes on the
-    // request object after the request has been processed. 
-	/*
-     for (Enumeration en = request.getAttributeNames(); en.hasMoreElements(); ) {
-     String name = (String)en.nextElement();
-     Object value = request.getAttribute(name);
-     log("attribute: " + name + "=" + value.toString());
 
-     }
-     */
-    // For example, a filter might append something to the response.
-	/*
-     PrintWriter respOut = new PrintWriter(response.getWriter());
-     respOut.println("<P><B>This has been appended by an intrusive filter.</B>");
-     */
-
-    /**
-     *
-     * @param request The servlet request we are processing
-     * @param response The servlet response we are creating
-     * @param chain The filter chain we are processing
-     *
-     * @exception IOException if an input/output error occurs
-     * @exception ServletException if a servlet error occurs
-     */
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        Logger log = Logger.getLogger(Autenticacao.class.getName());
+        //Logger log = Logger.getLogger(Autenticacao.class.getName());
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
-        Boolean autenticado = (Boolean) req.getSession().getAttribute("UsuarioLogado");
+        Boolean autenticado = (Boolean) req.getSession().getAttribute("Logado");
         if (autenticado == null || !autenticado) {
-            log.log(Level.INFO, String.format("Sem usuário autenticado [%s]", autenticado));
-            RequestDispatcher dispatcher = req.getRequestDispatcher("NOTICIAS.jsp");
+            System.out.print("ok");
+            //log.log(Level.INFO, String.format("Sem usuário autenticado [%s]", autenticado));
+            RequestDispatcher dispatcher = req.getRequestDispatcher("noticias.jsp");
             dispatcher.forward(req, resp);
             if (!acessoPermitido(req)) {
-                dispatcher = req.getRequestDispatcher("NOTICIAS.jsp");
+                dispatcher = req.getRequestDispatcher("noticias.jsp");
                 dispatcher.forward(req, resp);
                 return;
             }
         }
-        log.log(Level.INFO, String.format("Usuário autenticado [%s]", autenticado));
-        chain.doFilter(request, response);
+        //log.log(Level.INFO, String.format("Usuário autenticado [%s]", autenticado));
+        //chain.doFilter(request, response);
+        System.out.print("nn");
     }
 
-    /**
-     * Return the filter configuration object for this filter. /** Set the
-     * filter configuration object for this filter.
-     *
-     * @param filterConfig The filter configuration object
-     */
-    /**
-     * Destroy method for this filter
-     */
     public void destroy() {
     }
 

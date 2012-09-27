@@ -47,7 +47,7 @@ public class ControlePrincipal extends HttpServlet {
             conn = dataSource.getConnection();
             String acao = req.getParameter("acao");
             String acaoCRUD = req.getParameter("acaoCRUD");
-            if ("login".equals(acao)) {
+            if ("Entrar".equals(acao)) {
                 ControleLogin lc=new ControleLogin(req, res, conn);
                 lc.processo();
             } else if("novocliente".equals(acao)){

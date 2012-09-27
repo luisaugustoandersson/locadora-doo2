@@ -22,7 +22,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Guilherme Gehling
  */
-@WebFilter(filterName = "Filtro", urlPatterns = {"/.jsp"})
+@WebFilter(filterName = "filtro", urlPatterns = {"/veiculo.jsp"})
 public abstract class Filtro implements Filter {
 
     private static final boolean debug = true;
@@ -41,7 +41,6 @@ public abstract class Filtro implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
         Boolean autenticado = (Boolean) req.getSession().getAttribute("Logado");
         if (autenticado == null || !autenticado) {
-            System.out.print("ok");
             //log.log(Level.INFO, String.format("Sem usuário autenticado [%s]", autenticado));
             RequestDispatcher dispatcher = req.getRequestDispatcher("noticias.jsp");
             dispatcher.forward(req, resp);
@@ -53,7 +52,7 @@ public abstract class Filtro implements Filter {
         }
         //log.log(Level.INFO, String.format("Usuário autenticado [%s]", autenticado));
         //chain.doFilter(request, response);
-        System.out.print("nn");
+        
     }
 
     public void destroy() {

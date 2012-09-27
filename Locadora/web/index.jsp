@@ -29,6 +29,7 @@
             <div class="logo" id="logo" >
 
             </div>
+            
             <div class="login">
                 <form id="formlogin" action="controleprinc" method="POST">
                     <p>&nbsp;&nbsp;Usuário:<input type="text" name="txtlogin" size="15"></br>

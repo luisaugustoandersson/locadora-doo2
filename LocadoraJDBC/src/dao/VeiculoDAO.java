@@ -27,8 +27,8 @@ public class VeiculoDAO {
 
     public void create(Veiculo vec) throws SQLException {
         if (this.verifica(vec)) {
-            String sql = "INSERT INTO veiculo (cod_veiculo, cor, motor, cap_malas, lugares, ano, diaria, info, cod_modelo, cod_marca, foto)"
-                    + "VALUES (NEXTVAL('seq_veiculo'), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?";
+            String sql = "INSERT INTO veiculo (cod_veiculo, cor, motor, cap_malas, lugares, ano, diaria, info, cod_modelo, cod_marca, foto, disponivel)"
+                    + "VALUES (NEXTVAL('seq_veiculo'), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?";
             PreparedStatement pst = this.conexao.prepareStatement(sql);
             pst.setString(1, vec.getCor());
             pst.setString(2, vec.getMotor());
@@ -40,6 +40,7 @@ public class VeiculoDAO {
             pst.setInt(8, vec.getModelo().getCod());
             pst.setInt(9, vec.getMarca().getCod());
             pst.setString(10, vec.getFoto());
+            pst.setBoolean(11, vec.getDisponivel());
             pst.executeUpdate();
             Statement st = this.conexao.createStatement();
             ResultSet rst = st.executeQuery("SELECT CURRVAL('seq_veiculo')");
@@ -69,6 +70,7 @@ public class VeiculoDAO {
             vecret.setInfo(rs.getString("info"));
             vecret.setLugares(rs.getInt("lugares"));
             vecret.setMotor(rs.getString("motor"));
+            vecret.setDisponivel(rs.getBoolean("disponivel"));
             ModeloDAO modelodao = new ModeloDAO(conexao);
             Modelo modelo = new Modelo();
             modelo.setCod(rs.getInt("cod_modelo"));
@@ -87,7 +89,7 @@ public class VeiculoDAO {
 
     public void update(Veiculo veiculo) throws SQLException {
         if (this.verifica(veiculo)) {
-            String sql = "UPDATE veiculo SET cor=?, motor=?, cap_malas=?, lugares=?, ano=?, diaria=?, info=?, cod_modelo=?, cod_marca=?, foto=? WHERE cod_veiculo=?";
+            String sql = "UPDATE veiculo SET cor=?, motor=?, cap_malas=?, lugares=?, ano=?, diaria=?, info=?, cod_modelo=?, cod_marca=?, foto=?, disponivel=? WHERE cod_veiculo=?";
             PreparedStatement pst = this.conexao.prepareStatement(sql);
             pst.setString(1, veiculo.getCor());
             pst.setString(2, veiculo.getMotor());
@@ -99,7 +101,8 @@ public class VeiculoDAO {
             pst.setInt(8, veiculo.getModelo().getCod());
             pst.setInt(9, veiculo.getMarca().getCod());
             pst.setString(10, veiculo.getFoto());
-            pst.setInt(11, veiculo.getCod());
+            pst.setBoolean(11, veiculo.getDisponivel());
+            pst.setInt(12, veiculo.getCod());
             pst.executeUpdate();
             pst.close();
         }

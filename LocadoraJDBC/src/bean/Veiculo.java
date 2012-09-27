@@ -16,11 +16,12 @@ public class Veiculo {
     private Modelo modelo;
     private Marca marca;
     private double diaria;
+    private boolean disponivel;
 
     public Veiculo() {
     }
 
-    public Veiculo(int cod, String motor, String info, String cor, String foto, int ano, int cap_malas, int lugares, Modelo modelo, Marca marca, double diaria) {
+    public Veiculo(int cod, String motor, String info, String cor, String foto, int ano, int cap_malas, int lugares, Modelo modelo, Marca marca, double diaria, boolean disponovel) {
         this.cod = cod;
         this.motor = motor;
         this.info = info;
@@ -32,6 +33,7 @@ public class Veiculo {
         this.modelo = modelo;
         this.marca = marca;
         this.diaria = diaria;
+        this.disponivel = disponovel;
     }
 
     public int getCod() {
@@ -122,11 +124,19 @@ public class Veiculo {
         this.diaria = diaria;
     }
 
+    public boolean getDisponivel() {
+        return disponivel;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
+    }
+
     @Override
     public String toString() {
         return this.modelo.getModelo();
     }
-    
+
     @Override
     public int hashCode() {
         int hash = 7;

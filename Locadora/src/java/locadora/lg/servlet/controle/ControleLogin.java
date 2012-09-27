@@ -27,8 +27,8 @@ public class ControleLogin {
     }
 
     public void processo() throws ServletException, IOException, SQLException {
-        String user = req.getParameter("txtUsuario");
-        String senha = req.getParameter("txtSenha");
+        String user = req.getParameter("txtlogin");
+        String senha = req.getParameter("txtsenha");
         ClienteDAO usrDAO = new ClienteDAO(conn);
         Cliente cliente = new Cliente();
         cliente.setUsername(user);

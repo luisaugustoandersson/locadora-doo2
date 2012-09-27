@@ -4,8 +4,6 @@
  */
 package locadora.lg.servlet.controle;
 
-import bean.Cliente;
-import dao.ClienteDAO;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -35,13 +33,16 @@ public class ControleAcesso extends HttpServlet {
     
     public void processo() throws ServletException, IOException, SQLException {
         Boolean ok = false;
-        ok = (Boolean) req.getSession().getAttribute("Logado");
-        if (!ok) {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("promocao.jsp");
-            dispatcher.forward(req, resp);
-            return;
+        if (req.getSession().getAttribute("Logado") == null) {
+            
         } else {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("veiculo.jsp");
+        ok = (Boolean) req.getSession().getAttribute("Logado");
+        }
+        if (!ok) {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("noticias.jsp");
+            dispatcher.forward(req, resp);
+        } else {
+            RequestDispatcher dispatcher = req.getRequestDispatcher("veiculos.jsp");
             dispatcher.forward(req, resp);
         }
     }

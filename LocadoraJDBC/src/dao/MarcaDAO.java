@@ -43,7 +43,7 @@ public class MarcaDAO {
 
     public Marca retrive(Marca marca) throws SQLException {
         Marca marcaret = null;
-        String sql = "SELECT cod_marca, marca FROM marca";
+        String sql = "SELECT cod_marca, marca FROM marca WHERE cod_marca=?";
         PreparedStatement pst = this.conexao.prepareCall(sql);
         pst.setInt(1, marca.getCod());
         ResultSet rst = pst.executeQuery();

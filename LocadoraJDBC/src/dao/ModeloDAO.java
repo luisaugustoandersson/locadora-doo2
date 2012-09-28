@@ -45,11 +45,11 @@ public class ModeloDAO {
 
     public Modelo retrive(Modelo modelo) throws SQLException {
         Modelo modeloret = null;
-        String sql = "SELECT cod_modelo, modelo, cod_marca FROM modelo where cod=?";
+        String sql = "SELECT cod_modelo, modelo, cod_marca FROM modelo where cod_modelo=?";
         PreparedStatement pst = this.conexao.prepareCall(sql);
         pst.setInt(1, modelo.getCod());
         ResultSet rst = pst.executeQuery();
-        if (rst.next()) {
+        if (!rst.next()) {
             modeloret = new Modelo();
             modeloret.setCod(rst.getInt("cod_modelo"));
             modeloret.setModelo(rst.getString("modelo"));

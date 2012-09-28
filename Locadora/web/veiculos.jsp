@@ -25,6 +25,9 @@
                     </tr>
                     <tr>
                         <td><img src="imagens/palio.jpg" width="150" height="100"></img></td><td align="center">Fiat</td><td align="center">Hatch</td><td align="center">Palio</td><td align="center">Vermelho</td><td align="center"><img src="imagens/disponivel.jpg"></img></td><td align="center">R$120,00</br><a href="aluguel/formulario.php?valor=120,00">Alugue este Modelo</a></td></br>
+                        <%
+                        
+                        %>
                     </tr>
                     <tr>
                         <td><img src="imagens/Corsa.jpg" width="180" height="120"></img></td><td align="center">Chevrolet</td><td align="center">Hatch</td><td align="center">Corsa Classic</td><td align="center">Branco</td><td align="center"><img src="imagens/disponivel.jpg"></img></td><td align="center">R$140,00</br><a href="aluguel/formulario.php?valor=140,00">Alugue este Modelo</a></td></br>
@@ -47,9 +50,7 @@
                     <tr>
                         <td><img src="imagens/polo.jpg" width="190" height="100"></img></td><td align="center">Wolksvagen</td><td align="center">Sedan</td><td align="center">Polo</td><td align="center">Preto</td><td align="center"><img src="imagens/disponivel.jpg"></img></td><td align="center">R$160,00</br><a href="aluguel/formulario.php?valor=160,00">Alugue este Modelo</a></td></br>
                     </tr>
-                    <input type="button" Value="Mensagem" onClick="alert">
                 </table>
-                
         </div>
     </body>
 </html>

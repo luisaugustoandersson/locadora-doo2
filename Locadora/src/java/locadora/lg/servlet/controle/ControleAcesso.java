@@ -39,7 +39,7 @@ public class ControleAcesso extends HttpServlet {
         ok = (Boolean) req.getSession().getAttribute("Logado");
         }
         if (!ok) {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("noticias.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("conteudoproibido.jsp");
             dispatcher.forward(req, resp);
         } else {
             RequestDispatcher dispatcher = req.getRequestDispatcher("veiculos.jsp");

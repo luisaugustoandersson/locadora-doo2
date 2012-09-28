@@ -22,7 +22,7 @@ body {
     width: 960px;
     height: 33px;
     right: 170px;
-    bottom: 465px;
+    bottom: 509px;
 }
 .principal {
     background-color: #3999ff;
@@ -129,5 +129,5 @@ body {
     width: 220px;
     height: 50px;
     right: 300px; 
-    top: 50px;
+    top: 3px;
 }

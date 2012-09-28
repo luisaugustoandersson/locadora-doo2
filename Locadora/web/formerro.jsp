@@ -15,7 +15,6 @@
     <body>
         <div id="container">
             <div id="header">
-                <img src="imagens/ucpel.png">
                 <div class="tituloPri">Locadora de Veículos</div>
             </div>
             <div id="leftBar">

@@ -21,18 +21,18 @@
                     <td>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="noticias.jsp"><img src="imagens/noticias.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>|&nbsp;&nbsp;&nbsp;&nbsp;<a href="controleprinc?acao=veiculo"><img src="imagens/veiculos.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="formcliente.jsp"><img src="imagens/cadastro.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td>|&nbsp;&nbsp;&nbsp;&nbsp;<a href="promocoes.jsp"><img src="imagens/promocoes.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+                    
                 </tr>
             </table>
         </div>
         <div class="principal">
 
             <div class="logo" id="logo" >
-
+                <img src="imagens/logo.jpg"><img src="imagens/logo2.jpg">
             </div>
 
 
-            <div class="conteudo">
+            <div class="conteudonoticias">
                 <div class="conteudointerno">
                 <h3>VW confirma: novo Golf chegará ao Brasil</h3></br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="imagens/golf1.jpg"></br>

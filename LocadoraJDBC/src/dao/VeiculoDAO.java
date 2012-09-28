@@ -125,33 +125,33 @@ public class VeiculoDAO {
         String sql = "SELECT cod_veiculo, cor, motor, cap_malas, lugares, ano, diaria, info, cod_modelo, cod_marca, foto, disponivel FROM veiculo ORDER BY cod_veiculo";
         Statement st = this.conexao.createStatement();
         ResultSet rs = st.executeQuery(sql);
-        if (!rs.next()) {
-        } else {
-            while (rs.next()) {
-                Veiculo vec = new Veiculo();
-                vec.setCod(rs.getInt("cod_veiculo"));
-                vec.setCor(rs.getString("cor"));
-                vec.setAno(rs.getInt("ano"));
-                vec.setCap_malas(rs.getInt("cap_malas"));
-                vec.setDiaria(rs.getDouble("diaria"));
-                vec.setFoto(rs.getString("foto"));
-                vec.setInfo(rs.getString("info"));
-                vec.setLugares(rs.getInt("lugares"));
-                vec.setMotor(rs.getString("motor"));
-                vec.setDisponivel(rs.getBoolean("disponivel"));
-                ModeloDAO modelodao = new ModeloDAO(conexao);
-                Modelo modelo = new Modelo();
-                modelo.setCod(rs.getInt("cod_modelo"));
-                modelo = modelodao.retrive(modelo);
-                vec.setModelo(modelo);
-                MarcaDAO marcadao = new MarcaDAO(conexao);
-                Marca marca = new Marca();
-                marca.setCod(rs.getInt("cod_marca"));
-                marca = marcadao.retrive(marca);
-                vec.setMarca(marca);
-                lista.add(vec);
-            }
+
+
+        while (rs.next()) {
+            Veiculo vec = new Veiculo();
+            vec.setCod(rs.getInt("cod_veiculo"));
+            vec.setCor(rs.getString("cor"));
+            vec.setAno(rs.getInt("ano"));
+            vec.setCap_malas(rs.getInt("cap_malas"));
+            vec.setDiaria(rs.getDouble("diaria"));
+            vec.setFoto(rs.getString("foto"));
+            vec.setInfo(rs.getString("info"));
+            vec.setLugares(rs.getInt("lugares"));
+            vec.setMotor(rs.getString("motor"));
+            vec.setDisponivel(rs.getBoolean("disponivel"));
+            ModeloDAO modelodao = new ModeloDAO(conexao);
+            Modelo modelo = new Modelo();
+            modelo.setCod(rs.getInt("cod_modelo"));
+            modelo = modelodao.retrive(modelo);
+            vec.setModelo(modelo);
+            MarcaDAO marcadao = new MarcaDAO(conexao);
+            Marca marca = new Marca();
+            marca.setCod(rs.getInt("cod_marca"));
+            marca = marcadao.retrive(marca);
+            vec.setMarca(marca);
+            lista.add(vec);
         }
+
         rs.close();
         st.close();
         return lista;

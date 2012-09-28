@@ -48,6 +48,7 @@ public class MarcaDAO {
         pst.setInt(1, marca.getCod());
         ResultSet rst = pst.executeQuery();
         if (rst.next()) {
+            marcaret = new Marca();
             marcaret.setCod(rst.getInt("cod_marca"));
             marcaret.setMarca(rst.getString("marca"));
         }

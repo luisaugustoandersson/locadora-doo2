@@ -49,7 +49,7 @@ public class ModeloDAO {
         PreparedStatement pst = this.conexao.prepareCall(sql);
         pst.setInt(1, modelo.getCod());
         ResultSet rst = pst.executeQuery();
-        if (!rst.next()) {
+        if (rst.next()) {
             modeloret = new Modelo();
             modeloret.setCod(rst.getInt("cod_modelo"));
             modeloret.setModelo(rst.getString("modelo"));

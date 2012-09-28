@@ -36,7 +36,9 @@ public class ControleLogin {
         cliente = usrDAO.retrive(cliente);
         if (cliente == null || !cliente.validasenha(senha)) {
             ControlePrincipal.dispatcherErro(req, resp, "Usuario ou senha invalida");
-            return;
+            req.getSession().setAttribute("Nao", Boolean.FALSE);
+            RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+            dispatcher.forward(req, resp);
         } else {
             req.getSession().setAttribute("Logado", Boolean.TRUE);
             RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");

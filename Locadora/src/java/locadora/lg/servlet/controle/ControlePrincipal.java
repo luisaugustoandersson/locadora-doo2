@@ -18,7 +18,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
-import locadora.lg.servlet.filtro.Filtro;
 
 /**
  *
@@ -26,7 +25,6 @@ import locadora.lg.servlet.filtro.Filtro;
  */
 @WebServlet(name = "ControlePrincipal", urlPatterns = {"/controleprinc"})
 public class ControlePrincipal extends HttpServlet {
-
 
     public ControlePrincipal(DataSource dataSource, Exception exception) {
         this.dataSource = dataSource;
@@ -49,15 +47,15 @@ public class ControlePrincipal extends HttpServlet {
             String acao = req.getParameter("acao");
             String acaoCRUD = req.getParameter("acaoCRUD");
             if ("login".equals(acao)) {
-                ControleLogin lc=new ControleLogin(req, res, conn);
+                ControleLogin lc = new ControleLogin(req, res, conn);
                 lc.processo();
-            } else if("novocliente".equals(acao)){
-                ControleCliente cc=new ControleCliente(req, res, conn);
+            } else if ("novocliente".equals(acao)) {
+                ControleCliente cc = new ControleCliente(req, res, conn);
                 cc.processo(acaoCRUD);
-            } else if("filtro".equals(acao)){
-                ControleAcesso novofiltro=new ControleAcesso(req, res, conn);
-                novofiltro.processo();
-            } else if("logout".equals(acao)){
+            } else if ("veiculo".equals(acao)) {
+                ControleVeiculo vc = new ControleVeiculo(req, res, conn);
+                vc.processo();
+            } else if ("logout".equals(acao)) {
                 req.getSession().invalidate();
                 RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
                 dispatcher.forward(req, res);
@@ -75,7 +73,7 @@ public class ControlePrincipal extends HttpServlet {
             }
         }
     }
-    
+
     public static void dispatcherErro(HttpServletRequest req, HttpServletResponse resp, String msg) throws ServletException, IOException {
         req.setAttribute("mensagem", msg);
         RequestDispatcher dispatcher = req.getRequestDispatcher("formerro.jsp");

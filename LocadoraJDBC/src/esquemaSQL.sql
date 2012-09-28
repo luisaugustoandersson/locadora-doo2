@@ -58,3 +58,18 @@ cod_cliente numeric(6),
 cod_veiculo numeric(6),
 FOREIGN KEY(cod_cliente) REFERENCES Cliente (cod_cliente),
 FOREIGN KEY(cod_veiculo) REFERENCES Veiculo (cod_veiculo));
+
+
+
+insert into marca(cod_marca,marca) values(1,'Fiat');
+insert into marca(cod_marca,marca) values(2,'Chevrolet');
+
+insert into modelo(cod_modelo,modelo,cod_marca) values(1,'Palio',1);
+insert into modelo(cod_modelo,modelo,cod_marca) values(2,'Corsa Classic',2);
+insert into modelo(cod_modelo,modelo,cod_marca) values(3,'Uno',1);
+
+
+insert into veiculo(cod_veiculo,cor,motor,cap_malas,lugares,ano,foto,disponivel,cod_modelo,cod_marca) values(1,'Vermelho','1.4',200,5,2011,'imagens/palio.jpg',true,1,1);
+insert into veiculo(cod_veiculo,cor,motor,cap_malas,lugares,ano,foto,disponivel,cod_modelo,cod_marca) values(2,'Branco','1.0',180,5,2011,'imagens/Corsa.jpg',true,2,2);
+insert into veiculo(cod_veiculo,cor,motor,cap_malas,lugares,ano,foto,disponivel,cod_modelo,cod_marca) values(3,'Verde','1.0',240,5,2012,'imagens/uno.jpg',true,3,1);
+

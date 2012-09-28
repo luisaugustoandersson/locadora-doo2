@@ -53,9 +53,8 @@ public class ControlePrincipal extends HttpServlet {
                 ControleCliente cc = new ControleCliente(req, res, conn);
                 cc.processo(acaoCRUD);
             } else if ("veiculo".equals(acao)) {
-                //ControleVeiculo vc = new ControleVeiculo(req, res, conn);
-                ControleAcesso ca = new ControleAcesso(req, res, conn);//aqui o filtro funciona NÃO DEIXA VER A PAGINA SE NÃO ESTIVER LOGADO!
-                ca.processo();
+                ControleVeiculo vc = new ControleVeiculo(req, res, conn);
+                vc.processo();
             } else if ("logout".equals(acao)) {
                 req.getSession().invalidate();
                 RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
@@ -65,6 +64,7 @@ public class ControlePrincipal extends HttpServlet {
                 dispatcher.forward(req, res);
             }
         } catch (Exception ex) {
+            ex.printStackTrace();
             ControlePrincipal.dispatcherErro(req, res, ex.getMessage());
         } finally {
             try {

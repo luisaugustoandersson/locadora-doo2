@@ -34,7 +34,7 @@ public class ControleCliente {
         if ("salvar".equals(acaoCRUD)) {
             this.salvar();
         }
-        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("formcliente.jsp");
         dispatcher.forward(req, resp);
     }
 
@@ -51,20 +51,20 @@ public class ControleCliente {
         String user = req.getParameter("txtuser");
         String senha = req.getParameter("txtsenha");
         String email = req.getParameter("txtemail");
-        
+
         Cliente cli = new Cliente();
         cli.setNome(nome);
-        cli.setCpf(Integer.parseInt(cpf));  
+        cli.setCpf(Integer.parseInt(cpf));
         cli.setEndereco(endereco);
         cli.setComplemento(complemento);
         cli.setBairro(bairro);
         cli.setCidade(cidade);
         cli.setUf(uf);
-        cli.setCnh(Integer.parseInt(cnh));     
+        cli.setCnh(Integer.parseInt(cnh));
         cli.setUsername(user);
         cli.setSenha(senha);
         cli.setEmail(email);
-        
+
         int codigo = 0;
         try {
             codigo = Integer.parseInt(req.getParameter("txtCodigo"));
@@ -85,4 +85,3 @@ public class ControleCliente {
         }
     }
 }
-

@@ -49,21 +49,15 @@ public class ControleVeiculo {
         String descricao = req.getParameter("txtDescricao");
         String localizacao = req.getParameter("txtLocalizacao");
         Veiculo dept = new Veiculo();
-        //dept.setDescricao(descricao);
-        //dept.setLocalizacao(localizacao);
         int codigo = 0;
         try {
             codigo = Integer.parseInt(req.getParameter("txtCodigo"));
         } catch (NumberFormatException ex) {
         } catch (NullPointerException ex) {
         }
-        //DepartamentoDAO deptDAO = new DepartamentoDAO(conn);
         try {
             if (codigo == 0) {
-                //vecDAO.create(dept);
             } else {
-                //dept.setCod(codigo);
-                //deptDAO.update(dept);
             }
         } catch (Exception ex) {
             ControlePrincipal.dispatcherErro(req, resp, String.format("Não foi possível inserir departamento.[%s]", ex.getMessage()));

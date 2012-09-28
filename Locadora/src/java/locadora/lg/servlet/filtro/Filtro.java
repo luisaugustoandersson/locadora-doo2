@@ -1,6 +1,8 @@
 package locadora.lg.servlet.filtro;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -16,13 +18,10 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Guilherme Gehling
  */
-@WebFilter(filterName = "Filtro", urlPatterns = {"/veiculos.jsp"})
+@WebFilter(filterName = "Filtro", urlPatterns = {"/*"})
 public class Filtro implements Filter {
 
     private static final boolean debug = true;
-    // The filter configuration object we are associated with.  If
-    // this value is null, this filter instance is not currently
-    // configured. 
     private FilterConfig filterConfig = null;
 
     public Filtro() {
@@ -34,16 +33,25 @@ public class Filtro implements Filter {
         HttpServletResponse resp = (HttpServletResponse) response;
         Boolean autenticado = (Boolean) req.getSession().getAttribute("Logado");
         if (autenticado == null || !autenticado) {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("veiculos.jsp");
-           // dispatcher.forward(req, resp);
-           
-       //    System.out.printf("Fazendo Request para alguma coisa [%s]", req.getRequestURI());
-           chain.doFilter(request, response);
-     //      System.out.printf("Devolvendo Response para alguma coisa [%s]", req.getRequestURI());
+            if (acessoPermitido(req)) {
+                String acao = req.getParameter("acao");
+                if ("novocliente".equals(acao)) {
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("formcliente.jsp");
+                    dispatcher.forward(req, resp);
+                    chain.doFilter(request, response);
+                } else {
+                    RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+                    dispatcher.forward(req, resp);
+                    chain.doFilter(request, response);
+                }
+            } else {
+                RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+                dispatcher.forward(req, resp);
+                chain.doFilter(request, response);
+            }
         } else {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
+            chain.doFilter(request, response);
         }
-        //chain.doFilter(request, response);
     }
 
     @Override
@@ -52,5 +60,15 @@ public class Filtro implements Filter {
 
     @Override
     public void destroy() {
+    }
+
+    private boolean acessoPermitido(HttpServletRequest req) {
+        boolean ret = false;
+        String pagina = req.getRequestURI();
+        String acao = req.getParameter("acao");
+        if (pagina != null || "login".equals(acao) || "novocliente".equals(acao)) {
+            ret = true;
+        }
+        return ret;
     }
 }

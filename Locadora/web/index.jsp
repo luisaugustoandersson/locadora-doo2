@@ -18,7 +18,7 @@
             <table border="0">
                 <tr>
                     <td>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="noticias.jsp"><img src="imagens/noticias.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                    <td>|&nbsp;&nbsp;&nbsp;&nbsp;<a href="veiculos.jsp"><img src="imagens/veiculos.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
+                    <td>|&nbsp;&nbsp;&nbsp;&nbsp;<a href="controleprinc?acao=veiculo"><img src="imagens/veiculos.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="formcliente.jsp"><img src="imagens/cadastro.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>|&nbsp;&nbsp;&nbsp;&nbsp;<a href="promocoes.jsp"><img src="imagens/promocoes.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
                 </tr>

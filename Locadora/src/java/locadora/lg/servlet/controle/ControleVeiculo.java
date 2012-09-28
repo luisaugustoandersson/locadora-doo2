@@ -41,7 +41,7 @@ public class ControleVeiculo {
             this.excluir();
         }
         listaTodos();
-        RequestDispatcher dispatcher = req.getRequestDispatcher("formdepartamento.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("veiculos.jsp");
         dispatcher.forward(req, resp);
     }
 

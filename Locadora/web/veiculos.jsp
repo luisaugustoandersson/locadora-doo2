@@ -28,7 +28,17 @@
                         <th><b></b></th><th><b>Marca</b></th><th><b>Modelo</b></th><th><b>Cor do Veiculo</b></th><th><b>Disponibilidade</b></th><th><b>Diárias</b></th></br>
                     </tr>
 
-                    <%
+                    <%  //Ta aqui o erro, tem que testar primeiro se o atributo é nulo;
+                        //Chegando aqui : Logado = true; 
+                        //Chegando aqui : ok = true;
+                            Boolean ok = true;
+                        if (request.getSession().getAttribute("Logado") == null) {
+                            //esta entrando aqui. e dando erro
+                        } else {
+                            ok = (Boolean) request.getSession().getAttribute("Logado");
+                        }
+                        
+
                         List<Veiculo> veiculos = (List<Veiculo>) request.getAttribute("veiculos");
                         for (Veiculo vecLista : veiculos) {
                             out.print("<tr>");

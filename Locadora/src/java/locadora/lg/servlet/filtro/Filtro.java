@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Guilherme Gehling
  */
-@WebFilter(filterName = "Filtro", urlPatterns = {"/veiculo"})
+@WebFilter(filterName = "Filtro", urlPatterns = {"/veiculos.jsp"})
 public class Filtro implements Filter {
 
     private static final boolean debug = true;

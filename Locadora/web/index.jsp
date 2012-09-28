@@ -33,8 +33,8 @@
             
             <div class="login">
                 <form id="formlogin" action="controleprinc" method="POST">
-                    <p>&nbsp;&nbsp;Usuário:<input type="text" name="txtlogin" size="15">&nbsp;&nbsp;&nbsp;<input class="buttonsLogin" type="submit" value="Entrar"/></br>
-                        &nbsp;&nbsp;&nbsp;Senha:&nbsp;&nbsp;<input type="password" name="txtsenha" size="15"></br>
+                    <p>&nbsp;&nbsp;Usuário:<input type="text" name="txtlogin" size="15"></br>
+                        &nbsp;&nbsp;&nbsp;Senha:&nbsp;&nbsp;<input type="password" name="txtsenha" size="15">&nbsp;&nbsp;&nbsp;<input class="buttonsLogin" type="submit" value="Entrar"/></br>
                         <input type="hidden" id="acao" name="acao" value="login"/>
                         &nbsp;&nbsp;&nbsp;não possui conta? clique <a href="controleprinc?acao=novocliente">aqui</a></br>
                         

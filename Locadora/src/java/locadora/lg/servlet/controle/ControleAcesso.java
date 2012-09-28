@@ -36,7 +36,7 @@ public class ControleAcesso extends HttpServlet {
         if (req.getSession().getAttribute("Logado") == null) {
             
         } else {
-        ok = (Boolean) req.getSession().getAttribute("Logado");
+            ok = (Boolean) req.getSession().getAttribute("Logado");
         }
         if (!ok) {
             RequestDispatcher dispatcher = req.getRequestDispatcher("conteudoproibido.jsp");

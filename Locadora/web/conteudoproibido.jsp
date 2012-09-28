@@ -13,5 +13,6 @@
     </head>
     <body>
         <h2>É presiso Logar-se no Site para Prosseguir</h2>
+        <a class="labelsErro" href="index.jsp">Voltar</a>
     </body>
 </html>

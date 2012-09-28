@@ -22,7 +22,7 @@ body {
     width: 960px;
     height: 33px;
     right: 170px;
-    bottom: 510px;
+    bottom: 465px;
 }
 .principal {
     background-color: #3999ff;
@@ -50,7 +50,7 @@ body {
     background-color: #ffffff;
     color: #666666;
     width: 280px;
-    height: 130px;
+    height: 110px;
     top: 180px;
     left: 700px; 
 }
@@ -58,9 +58,17 @@ body {
     position: absolute;
     background-color: #ffffff;
     width: 650px;
-    height: 600px;
+    height: 1400px;
     top: 180px;
     right: 330px;
+}
+.conteudointerno {
+    position: absolute;
+    background-color: #ffffff;
+    width: 550px;
+    height: 1300px;
+    top: 20px;
+    right: 50px;
 }
 .busca {
     position: absolute;

@@ -17,6 +17,7 @@
         <div class="menu">
             <table border="0">
                 <tr>
+                    <td>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.jsp"><img src="imagens/home.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="noticias.jsp"><img src="imagens/noticias.png"></a> &nbsp;&nbsp;&nbsp;&nbsp;</td>
                     <td>|&nbsp;&nbsp;&nbsp;&nbsp;<a href="controleprinc?acao=veiculo"><img src="imagens/veiculos.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;|</td>
                     <td>&nbsp;&nbsp;&nbsp;&nbsp;<a href="formcliente.jsp"><img src="imagens/cadastro.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -32,11 +33,12 @@
             
             <div class="login">
                 <form id="formlogin" action="controleprinc" method="POST">
-                    <p>&nbsp;&nbsp;Usuário:<input type="text" name="txtlogin" size="15"></br>
+                    <p>&nbsp;&nbsp;Usuário:<input type="text" name="txtlogin" size="15">&nbsp;&nbsp;&nbsp;<input class="buttonsLogin" type="submit" value="Entrar"/></br>
                         &nbsp;&nbsp;&nbsp;Senha:&nbsp;&nbsp;<input type="password" name="txtsenha" size="15"></br>
-                        &nbsp;&nbsp;<input type="checkbox" name="checksenha">&nbsp;lembrar minha senha?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="buttonsLogin" type="submit" value="Entrar"/></br>
                         <input type="hidden" id="acao" name="acao" value="login"/>
-                        &nbsp;&nbsp;&nbsp;não possui conta? clique <a href="controleprinc?acao=novocliente">aqui</a>
+                        &nbsp;&nbsp;&nbsp;não possui conta? clique <a href="controleprinc?acao=novocliente">aqui</a></br>
+                        
+                        
                     </p>
                 </form>
             </div>

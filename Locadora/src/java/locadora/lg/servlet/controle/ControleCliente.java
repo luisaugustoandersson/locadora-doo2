@@ -34,13 +34,7 @@ public class ControleCliente {
         if ("salvar".equals(acaoCRUD)) {
             this.salvar();
         }
-//            else if ("carregar".equals(acaoCRUD)) {
-//            this.carregar();
-//        } else if ("excluir".equals(acaoCRUD)) {
-//            this.excluir();
-//        }
-//       listaTodos();
-        RequestDispatcher dispatcher = req.getRequestDispatcher("formcliente.jsp");
+        RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
         dispatcher.forward(req, resp);
     }
 
@@ -92,49 +86,3 @@ public class ControleCliente {
     }
 }
 
-//    private void carregar() throws ServletException, IOException {
-//
-//        int codigo = 0;
-//        try {
-//            codigo = Integer.parseInt(req.getParameter("txtCodigo"));
-//        } catch (NumberFormatException ex) {
-//        } catch (NullPointerException ex) {
-//        }
-//        DepartamentoDAO deptDAO = new DepartamentoDAO(conn);
-//        try {
-//            if (codigo > 0) {
-//                Departamento dept = new Departamento(codigo);
-//                dept = deptDAO.retrieve(dept);
-//                req.setAttribute("departamento", dept);
-//            }
-//        } catch (Exception ex) {
-//            ControlePrincipal.dispatcherErro(req, resp, String.format("Não foi possível ler departamento.[%s]", ex.getMessage()));
-//            return;
-//        }
-//
-//    }
-
-//    private void excluir() throws ServletException, IOException {
-//        int codigo = 0;
-//        try {
-//            codigo = Integer.parseInt(req.getParameter("txtCodigo"));
-//        } catch (NumberFormatException ex) {
-//        } catch (NullPointerException ex) {
-//        }
-//        DepartamentoDAO deptDAO = new DepartamentoDAO(conn);
-//        try {
-//            if (codigo > 0) {
-//                Departamento dept = new Departamento(codigo, req.getParameter("txtDescricao"), req.getParameter("txtLocalizacao"));
-//                deptDAO.delete(dept);
-//            }
-//        } catch (Exception ex) {
-//            ControlePrincipal.dispatcherErro(req, resp, String.format("Não foi possível excluir departamento.[%s]", ex.getMessage()));
-//            return;
-//        }
-//    }
-
-//    private void listaTodos() throws ServletException, IOException, SQLException {
-//        DepartamentoDAO deptDAO = new DepartamentoDAO(conn);
-//        req.setAttribute("departamentos", deptDAO.listaTodos());
-//    }
-//}

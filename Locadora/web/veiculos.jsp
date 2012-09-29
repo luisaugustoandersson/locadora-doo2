@@ -25,7 +25,7 @@
                 </br></br>
                 <table border="0" cellspacing="4" cellpadding="3" width="90%" align="center">
                     <tr>
-                        <th><b></b></th><th><b>Marca</b></th><th><b>Modelo</b></th><th><b>Teste</b></th><th><b>Cor do Veiculo</b></th><th><b>Disponibilidade</b></th><th><b>Diárias</b></th></br>
+                        <th><b></b></th><th><b>Marca</b></th><th><b>Modelo</b></th><th><b>Cor do Veiculo</b></th><th><b>Disponibilidade</b></th><th><b>Diárias</b></th></br>
                     </tr>
 
                     <%
@@ -37,9 +37,9 @@
                             out.print(String.format("<td align=\"center\">%s</td>", vecLista.getModelo().getModelo()));
                             out.print(String.format("<td align=\"center\">%s</td>", vecLista.getCor()));
                             if (vecLista.getDisponivel()) {
-                                out.print(String.format("<td><img src=\"imagens/disponivel.jpg\"></img></td>"));
+                                out.print(String.format("<td align=\"center\"><img src=\"imagens/disponivel.jpg\"></img></td>"));
                             } else {
-                                out.print(String.format("<td><img src=\"imagens/disponivel.jpg\"></img></td>"));
+                                out.print(String.format("<td align=\"center\"><img src=\"imagens/disponivel.jpg\"></img></td>"));
                             }
                             out.print(String.format("<td align=\"center\">%s</td>", vecLista.getDiaria()));
                             out.print(String.format("<td><input type=\"submit\" value=\"Alugar\"/>"));
